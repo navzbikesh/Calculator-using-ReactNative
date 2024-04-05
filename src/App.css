@@ -36,3 +36,59 @@
     transform: rotate(360deg);
   }
 }
+
+
+*, *::before,*::after {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  background:linear-gradient(to right, lavender,purple)
+}
+
+.calculator-grid{
+  display: grid;
+  margin-top: 2rem;
+  justify-content: center;
+  grid-template-columns: repeat(4,6rem);
+  grid-template-rows: minmax(7rem,auto) repeat(5,6rem)
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 2px solid white;
+  outline: none;
+  background-color: whitesmoke;
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+  background-color: lightblue;
+}
+
+
+.span-two{
+  grid-column: span 2;
+}
+
+.output{
+  grid-column: 1 /-1;
+  background-color: #282c34;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: .75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.output .previous-operand{
+  font-size: 1.5rem;
+  color: white;
+}
+
+.output .current-operand{
+  font-size: 2rem;
+  color: white;
+}
